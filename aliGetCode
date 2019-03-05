@@ -6,6 +6,7 @@
 	$data['pwd'] = '****'; //软件密码
 	$data['type'] = 'alipay'; 
 	$data['token'] = md5(md5('money='.$data['money'].'&desc='.$data['desc'].'&account='.$data['account'].'&pwd='.$data['pwd']).$data['type']);//验证秘钥
+	$data['sktype'] = 1;
 	$dataString = http_build_query($data);
 	$res = file_get_contents($makongUlr.$dataString);
 	$resArr = json_decode($res,true);
